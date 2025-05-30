@@ -459,3 +459,14 @@ h2 ~ p {
     margin-top: 3em;
     padding-top: 2em;
 }
+
+/* メディアクエリ */
+@media (max-width: 800px) {
+  html {
+    box-shdow: none;
+    padding: 0;
+  }
+  .post-aside {
+    display: none;
+  }
+}
