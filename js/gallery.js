@@ -12,9 +12,16 @@ function activateGallery() {
   let asideDescription = document.querySelector("#gallery-info .description");
 
   thumbnails.forEach(function(thumbnail) {
+    // 大画像をプリロードする
+    let newImageSrc = thumbnail.dataset.largeVersion;
+    let largeVersion = new Image();
+    largeVersion.src = newImageSrc;
+    // imageオブジェクト（インスタンス）はWebページのメモリ上に存在するが、画面には表示されないもの
+    // そのソース属性を設定するとイメージデータの読み込みがバックグラウンドで（クリックされる前に）行われる
+
     thumbnail.addEventListener("click", function() {
       // クリックされたサムネイル画像をメイン画像として設定する
-      mainImage.setAttribute("src", thumbnail.dataset.largeVersion);
+      mainImage.setAttribute("src", newImageSrc);
 
       // 現在選択されている画像の表示をクリックしたものに変更する
       let currentClass = "current"
