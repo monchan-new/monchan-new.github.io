@@ -29,6 +29,15 @@
 
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
+
+    <script src="/js/gallery.js"></script>
+    // jekyllのルートディレクトリーが(monchan-new.github.ip)なので、
+    // そこからの絶対パスを指定する必要がある
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            activateGallery();
+        });
+    </script>
 </head>
   <body>
     <header class="header">

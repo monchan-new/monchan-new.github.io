@@ -1,4 +1,46 @@
----
-layout: default
----
-<h1 style="padding: 2em;">4度目のhello world、これでおしまい。</h1>
+<!-- Grid sample -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid ダッシュボード</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar main main"
+                "footer footer footer";
+            grid-template-columns: 250px 1fr 1fr;
+            grid-template-rows: 60px auto 50px;
+            gap: 10px;
+            height: 100vh;
+        }
+        .header { grid-area: header; background: #4CAF50; color: white; text-align: center; padding: 15px; }
+        .sidebar { grid-area: sidebar; background: #333; color: white; padding: 15px; }
+        .main { grid-area: main; background: #f2f2f2; padding: 15px; }
+        .footer { grid-area: footer; background: #4CAF50; color: white; text-align: center; padding: 15px; }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "sidebar"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px auto auto 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">ヘッダー</div>
+        <div class="sidebar">サイドバー</div>
+        <div class="main">メインコンテンツ</div>
+        <div class="footer">フッター</div>
+    </div>
+</body>
+</html>
