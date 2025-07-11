@@ -38,5 +38,5 @@ function activateGallery() {
     });
   });
 
-  alert("ギャラリーファイルからこんにちは！");
+  // alert("ギャラリーファイルからこんにちは！");
 }
